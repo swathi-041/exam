@@ -8,8 +8,7 @@ const port = process.env.PORT || 5002;
 // Import routes
 const examRoutes = require('./routes/examRoutes');
 const authRoutes = require('./routes/authRoutes');
-const postRoutes = require('./routes/postRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL)
@@ -26,8 +25,7 @@ app.use(express.json()); // To parse JSON bodies
 // Routes
 app.use('/api/exams', examRoutes); // Ensure this line is present
 app.use('/auth', authRoutes);
-app.use('/api/posts', postRoutes);
-app.use('/api/notifications', notificationRoutes);
+
 
 // Start the server
 app.listen(port, () => {
