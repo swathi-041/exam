@@ -18,7 +18,8 @@ mongoose.connect(process.env.MONGO_URL)
 // Middleware
 app.use(cors({
     credentials: true,
-    origin: 'https://eduquestt.netlify.app/', 
+    // origin: 'https://eduquestt.netlify.app/', 
+    origin:'*'
 }));
 app.use(express.json()); // To parse JSON bodies
 

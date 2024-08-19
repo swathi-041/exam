@@ -90,7 +90,7 @@
 //     }
 // };
 
-
+const mongoose = require('mongoose');
 const Exam = require('../models/Exam');
 
 // Function to get all available exams
@@ -99,29 +99,43 @@ const getExams = async (req, res) => {
         const exams = await Exam.find({}, 'title description');
         res.json(exams);
     } catch (err) {
-        console.error(err);
+        console.error('Error fetching exams:', err);
         res.status(500).json({ message: 'Error fetching exams' });
     }
 };
 
 // Function to get a specific exam by ID
 const getExamById = async (req, res) => {
+    const { id } = req.params;
+
+    // Validate the ObjectId
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ message: 'Invalid exam ID' });
+    }
+
     try {
-        const exam = await Exam.findById(req.params.id);
+        const exam = await Exam.findById(id);
         if (!exam) {
             return res.status(404).json({ message: 'Exam not found' });
         }
         res.json(exam);
     } catch (err) {
-        console.error(err);
+        console.error('Error fetching exam details:', err);
         res.status(500).json({ message: 'Error fetching exam details' });
     }
 };
 
 // Function to submit answers and evaluate the score
 const submitAnswers = async (req, res) => {
+    const { id } = req.params;
+
+    // Validate the ObjectId
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).json({ message: 'Invalid exam ID' });
+    }
+
     try {
-        const exam = await Exam.findById(req.params.id);
+        const exam = await Exam.findById(id);
         if (!exam) {
             return res.status(404).json({ message: 'Exam not found' });
         }
@@ -140,7 +154,7 @@ const submitAnswers = async (req, res) => {
 
         res.json({ score, totalQuestions: exam.questions.length });
     } catch (err) {
-        console.error(err);
+        console.error('Error evaluating answers:', err);
         res.status(500).json({ message: 'Error evaluating answers' });
     }
 };
