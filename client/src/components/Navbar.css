@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+}
+
+.navbar-dark {
+    --navbar-bg: #307e47a3;
+    --navbar-text: #fff;
+}
+
+.navbar-light {
+    --navbar-bg: #0b1116;
+    --navbar-text: #fbf8f8;
+}
+
+.navbar-logo .logo {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+nav a {
+    font-size: 1.2rem; /* Change font size */
+    color: var(--navbar-text); /* Use text color from theme */
+    text-decoration: none; /* Remove underline */
+    font-family: 'Poppins', sans-serif; /* Use a custom font */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a:hover {
+    color: #ffd700; /* Change color on hover (gold color as example) */
+}
+
+button {
+    background-color: var(--navbar-text);
+    color: var(--navbar-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+}

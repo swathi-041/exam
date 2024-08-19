@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  transition: background-color 0.3s ease;
+}
+
+:root {
+  --app-bg: #fff;
+  --app-text: #000;
+}
+
+.dark-theme {
+  --app-bg: #121212;
+  --app-text: #e0e0e0;
+}
+
+.light-theme {
+  --app-bg: #f9f9f9;
+  --app-text: #000;
+}
+
+main {
+  padding: 2rem;
+}

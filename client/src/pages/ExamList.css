@@ -1,0 +1,70 @@
+/* ExamList.css */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #da8816; /* Bright orange color for headings */
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for a softer look */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for a subtle depth effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li:hover {
+    background-color: #f5f5f5; /* Slightly lighter background color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #444; /* Darker color for better readability */
+    margin: 0;
+}
+
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0; /* Adjusted margin for better spacing */
+}
+
+li button {
+    background-color: #307e47a3; /* Dark green for the button */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for a subtle scale effect */
+    align-self: flex-start; /* Align button to the left */
+}
+
+li button:hover {
+    background-color: #256d3f; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+li button:focus {
+    outline: none;
+}

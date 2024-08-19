@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+.fullscreen-image {
+    flex-grow: 1;
+    width: 100vw; /* Full width of the viewport */
+    height: calc(100vh - 60px); /* Adjust based on the height of your navbar */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.navbar {
+    height: 60px; /* Example height of the navbar */
+    background-color: var(--navbar-bg); /* Use your navbar background color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
