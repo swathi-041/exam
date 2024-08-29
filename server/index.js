@@ -11,18 +11,19 @@ const authRoutes = require('./routes/authRoutes');
 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Middleware
 app.use(cors({
     credentials: true,
-    // origin: 'https://eduquestt.netlify.app/', 
-    origin:[
-       "https://eduquest-nine.vercel.app",
-       "https://localhost:5173",
-
+    origin: [
+        "https://eduquest-nine.vercel.app",
+        "http://localhost:5173"
     ]
 }));
 app.use(express.json()); // To parse JSON bodies
