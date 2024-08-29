@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-
+import './UploadExam.css';
 export default function UploadExam() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -21,6 +21,7 @@ export default function UploadExam() {
         }
         setQuestions(updatedQuestions);
     };
+
     const addQuestion = () => {
         setQuestions([
             ...questions,
@@ -45,28 +46,31 @@ export default function UploadExam() {
             toast.error('Failed to upload exam');
         }
     };
+
     return (
-        <div>
-            <h1>Upload Exam</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className="upload-exam-container">
+            <h1 className="upload-exam-title">Upload Exam</h1>
+            <form onSubmit={handleSubmit} className="upload-exam-form">
+                <div className="form-group">
                     <label>Title:</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        className="input-field"
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Description:</label>
                     <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
+                        className="textarea-field"
                     />
                 </div>
                 {questions.map((question, index) => (
-                    <div key={index}>
+                    <div key={index} className="question-container">
                         <label>Question {index + 1}:</label>
                         <input
                             type="text"
@@ -74,11 +78,12 @@ export default function UploadExam() {
                             onChange={(e) =>
                                 handleQuestionChange(index, 'question', e.target.value)
                             }
+                            className="input-field"
                             required
                         />
-                        <div>
+                        <div className="options-container">
                             {question.options.map((option, i) => (
-                                <div key={i}>
+                                <div key={i} className="option-field">
                                     <label>Option {i + 1}:</label>
                                     <input
                                         type="text"
@@ -86,6 +91,7 @@ export default function UploadExam() {
                                         onChange={(e) =>
                                             handleQuestionChange(index, `option-${i}`, e.target.value)
                                         }
+                                        className="input-field"
                                         required
                                     />
                                 </div>
@@ -98,14 +104,15 @@ export default function UploadExam() {
                             onChange={(e) =>
                                 handleQuestionChange(index, 'correctAnswer', e.target.value)
                             }
+                            className="input-field"
                             required
                         />
-                     </div>
+                    </div>
                 ))}
-                <button type="button" onClick={addQuestion}>
+                <button type="button" onClick={addQuestion} className="button add-question-button">
                     Add Another Question
                 </button>
-                <button type="submit">Upload Exam</button>
+                <button type="submit" className="button submit-button">Upload Exam</button>
             </form>
         </div>
     );
