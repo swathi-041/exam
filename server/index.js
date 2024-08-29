@@ -19,7 +19,11 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(cors({
     credentials: true,
     // origin: 'https://eduquestt.netlify.app/', 
-    origin:'*'
+    origin:[
+       "https://eduquest-nine.vercel.app",
+       "https://localhost:5173",
+
+    ]
 }));
 app.use(express.json()); // To parse JSON bodies
 
