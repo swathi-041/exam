@@ -9,7 +9,7 @@ export default function CreatePostPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5002/api/posts', { title, type, content });
+            await axios.post('https://eduquestt.onrender.com/api/posts', { title, type, content });
             setTitle('');
             setContent('');
             alert('Post created successfully');

@@ -17,9 +17,9 @@
 //     useEffect(() => {
 //         const fetchExam = async () => {
 //             try {
-//                 const response = await axios.get(`http://localhost:5002/exams/${id}`);
+//                 const response = await axios.get(`https://eduquestt.onrender.com/exams/${id}`);
 //                 setExam(response.data.exam);
-//                 const userResponse = await axios.get(`http://localhost:5002/users/me`);
+//                 const userResponse = await axios.get(`https://eduquestt.onrender.com/users/me`);
 //                 const attemptedExams = userResponse.data.user.attemptedExams;
 //                 setAttempted(attemptedExams.includes(id));
 //             } catch (error) {
@@ -35,7 +35,7 @@
 //             return;
 //         }
 //         try {
-//             await axios.post(`http://localhost:5002/exams/attempt-exam/${id}`);
+//             await axios.post(`https://eduquestt.onrender.com/exams/attempt-exam/${id}`);
 //             setAttempted(true);
 //             alert('Exam attempted successfully.');
 //         } catch (error) {
@@ -76,9 +76,9 @@
 //     useEffect(() => {
 //         const fetchExam = async () => {
 //             try {
-//                 const response = await axios.get(`http://localhost:5002/exams/${id}`);
+//                 const response = await axios.get(`https://eduquestt.onrender.com/exams/${id}`);
 //                 setExam(response.data); // Adjust this if your backend response has a different structure
-//                 const userResponse = await axios.get(`http://localhost:5002/users/me`);
+//                 const userResponse = await axios.get(`https://eduquestt.onrender.com/users/me`);
 //                 const attemptedExams = userResponse.data.attemptedExams; // Adjust this if your backend response has a different structure
 //                 setAttempted(attemptedExams.includes(id));
 //             } catch (error) {
@@ -94,7 +94,7 @@
 //             return;
 //         }
 //         try {
-//             await axios.post(`http://localhost:5002/exam/${id}/submit`, { answers: [] }); // Ensure your backend endpoint and data format match
+//             await axios.post(`https://eduquestt.onrender.com/exam/${id}/submit`, { answers: [] }); // Ensure your backend endpoint and data format match
 //             setAttempted(true);
 //             alert('Exam attempted successfully.');
 //         } catch (error) {
@@ -131,7 +131,7 @@
 //     useEffect(() => {
 //         async function fetchExam() {
 //             try {
-//                 const response = await axios.get(`http://localhost:5002/api/exams/${id}`); // Fetch exam by ID
+//                 const response = await axios.get(`https://eduquestt.onrender.com/api/exams/${id}`); // Fetch exam by ID
 //                 setExam(response.data);
 //             } catch (error) {
 //                 console.error('Error fetching exam:', error);
@@ -180,7 +180,7 @@ export default function Exam() {
     useEffect(() => {
         async function fetchExam() {
             try {
-                const response = await axios.get(`http://localhost:5002/api/exams/${id}`); // Fetch exam by ID
+                const response = await axios.get(`https://eduquestt.onrender.com/api/exams/${id}`); // Fetch exam by ID
                 setExam(response.data);
                 // Initialize selectedAnswers with null values based on the number of questions
                 setSelectedAnswers(new Array(response.data.questions.length).fill(null));

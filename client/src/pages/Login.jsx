@@ -16,7 +16,7 @@
 //     const loginUser = async (e) => {
 //         e.preventDefault();
 //         try {
-//             const response = await axios.post('http://localhost:5002/auth/login', {
+//             const response = await axios.post('https://eduquestt.onrender.com/auth/login', {
 //                 email: data.email,
 //                 password: data.password
 //             });
@@ -83,7 +83,7 @@ export default function Login() {
     const loginUser = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5002/auth/login', {
+            const response = await axios.post('https://eduquestt.onrender.com/auth/login', {
                 email: data.email,
                 password: data.password
             });

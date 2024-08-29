@@ -10,7 +10,7 @@
 //     useEffect(() => {
 //         async function fetchExam() {
 //             try {
-//                 const response = await axios.get(`http://localhost:5002/api/exams/${title}`);
+//                 const response = await axios.get(`https://eduquestt.onrender.com/api/exams/${title}`);
 //                 setExam(response.data);
 //             } catch (err) {
 //                 console.error('Error fetching exam details:', err);
@@ -19,7 +19,7 @@
 
 //         async function fetchAttempts() {
 //             try {
-//                 const response = await axios.get(`http://localhost:5002/api/attempts/${title}`); // Update API endpoint for fetching attempts
+//                 const response = await axios.get(`https://eduquestt.onrender.com/api/attempts/${title}`); // Update API endpoint for fetching attempts
 //                 setAttempts(response.data);
 //             } catch (err) {
 //                 console.error('Error fetching attempts:', err);
@@ -74,7 +74,7 @@ export default function ExamDetail() {
     useEffect(() => {
         async function fetchExam() {
             try {
-                const response = await axios.get(`http://localhost:5002/api/exams/${title}`);
+                const response = await axios.get(`https://eduquestt.onrender.com/api/exams/${title}`);
                 setExam(response.data);
             } catch (err) {
                 console.error('Error fetching exam details:', err);
@@ -90,7 +90,7 @@ export default function ExamDetail() {
             return;
         }
         try {
-            await axios.post(`http://localhost:5002/api/exams/${title}/attempt`);
+            await axios.post(`https://eduquestt.onrender.com/api/exams/${title}/attempt`);
             setAttempted(true);
             alert('Exam attempted successfully.');
         } catch (err) {

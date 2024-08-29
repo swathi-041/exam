@@ -8,7 +8,7 @@
 //     useEffect(() => {
 //         async function fetchExams() {
 //             try {
-//                 const response = await axios.get('http://localhost:5002/api/exams');
+//                 const response = await axios.get('https://eduquestt.onrender.com/api/exams');
 //                 setExams(response.data);
 //             } catch (error) {
 //                 console.error('Error fetching exams:', error);
@@ -43,7 +43,7 @@ export default function ExamList() {
     useEffect(() => {
         async function fetchExams() {
             try {
-                const response = await axios.get('http://localhost:5002/api/exams');
+                const response = await axios.get('https://eduquestt.onrender.com/api/exams');
                 console.log('Fetched exams:', response.data); // Add this line
                 setExams(response.data);
             } catch (error) {

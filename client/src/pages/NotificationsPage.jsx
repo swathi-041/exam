@@ -9,7 +9,7 @@ function NotificationsPage() {
     useEffect(() => {
         async function fetchNotifications() {
             try {
-                const response = await axios.get('http://localhost:5002/api/notifications');
+                const response = await axios.get('https://eduquestt.onrender.com/api/notifications');
                 setNotifications(response.data);
             } catch (error) {
                 console.error('Error fetching notifications:', error);
@@ -27,7 +27,7 @@ function NotificationsPage() {
         const formData = new FormData();
         formData.append('file', file);
         try {
-            const response = await axios.post('http://localhost:5002/api/notifications/upload', formData);
+            const response = await axios.post('https://eduquestt.onrender.com/api/notifications/upload', formData);
             const fileUrl = response.data.fileUrl;
             console.log('File uploaded:', fileUrl);
         } catch (error) {

@@ -37,7 +37,7 @@ export default function Register() {
         }
 
         try {
-            const response = await axios.post('http://localhost:5002/auth/register', {
+            const response = await axios.post('https://eduquestt.onrender.com/auth/register', {
                 username: data.username,
                 email: data.email,
                 password: data.password,

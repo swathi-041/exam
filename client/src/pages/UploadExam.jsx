@@ -32,7 +32,7 @@ export default function UploadExam() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5002/api/exams/upload', {
+            await axios.post('https://eduquestt.onrender.com/api/exams/upload', {
                 title,
                 description,
                 questions
